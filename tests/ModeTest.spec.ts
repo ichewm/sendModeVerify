@@ -11,6 +11,7 @@ describe('ModeTest', () => {
     let user1: SandboxContract<TreasuryContract>;
     let modeATest: SandboxContract<ModeATest>;
     let modeBTest: SandboxContract<ModeBTest>;
+    let seed: bigint = BigInt(1);
 
     beforeEach(async () => {
         blockchain = await Blockchain.create();
@@ -82,7 +83,7 @@ describe('ModeTest', () => {
     });
 
     async function deployModeA() {
-        modeATest = blockchain.openContract(await ModeATest.fromInit(deployer.address));
+        modeATest = blockchain.openContract(await ModeATest.fromInit(deployer.address, seed));
         const deployResult = await modeATest.send(
             deployer.getSender(),
             {
@@ -103,7 +104,7 @@ describe('ModeTest', () => {
     }
 
     async function deployModeB() {
-        modeBTest = blockchain.openContract(await ModeBTest.fromInit(deployer.address));
+        modeBTest = blockchain.openContract(await ModeBTest.fromInit(deployer.address, seed));
         const deployResult = await modeBTest.send(
             deployer.getSender(),
             {

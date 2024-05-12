@@ -26,10 +26,12 @@ contract ModeATest with OwnableTransferable, Deployable {
 
     mode_b: Address;
     owner: Address;
+    seed: Int;
     mark: Int = 0;
 
-    init(owner: Address){
+    init(owner: Address, seed: Int){
         self.owner = owner;
+        self.seed = seed;
         self.mode_b = newAddress(0, 0);
     }
 

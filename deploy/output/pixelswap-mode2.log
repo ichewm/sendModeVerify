@@ -1,0 +1,81 @@
+2024-05-12T16:35:44.328Z: Deploying using ./deploy/mode2.json. Executing step 1.
+2024-05-12T16:35:44.444Z: ====== Deploying ModeATest Contract ======
+2024-05-12T16:36:05.133Z: Waiting for transaction to confirm...
+2024-05-12T16:36:19.051Z: Transaction confirmed!
+2024-05-12T16:36:21.142Z: modeATest contract: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s
+2024-05-12T16:36:21.142Z: ====== Deploying ModeATest Deployed ======
+2024-05-12T16:36:21.143Z: File written successfully:
+2024-05-12T16:36:52.380Z: Deploying using ./deploy/mode2.json. Executing step 2.
+2024-05-12T16:36:52.382Z: modeATestContract: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s
+2024-05-12T16:36:52.482Z: ====== Deploying modeBTest Contract ======
+2024-05-12T16:37:14.782Z: Waiting for transaction to confirm...
+2024-05-12T16:37:29.551Z: AxiosError: timeout of 5000ms exceeded
+2024-05-12T16:37:29.556Z: Network Err, Retrying...
+2024-05-12T16:37:31.646Z: Waiting for transaction to confirm...
+2024-05-12T16:37:40.197Z: Transaction confirmed!
+2024-05-12T16:37:42.279Z: modeBTest contract: EQD3NfOLyLzHwKZ37henJc-PIoA27L3PnXJjn9caB-_9RmtO
+2024-05-12T16:37:42.280Z: ====== Deploying modeBTest Deployed ======
+2024-05-12T16:37:42.281Z: File written successfully:
+2024-05-12T16:37:56.858Z: Deploying using ./deploy/mode2.json. Executing step 3.
+2024-05-12T16:37:56.861Z: modeATestContract: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s
+2024-05-12T16:37:56.861Z: modeBTestContract: EQD3NfOLyLzHwKZ37henJc-PIoA27L3PnXJjn9caB-_9RmtO
+2024-05-12T16:38:01.136Z: ====== FundGas start ======
+2024-05-12T16:38:01.136Z: ModeContract: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s
+2024-05-12T16:38:20.474Z: Waiting for transaction to confirm...
+2024-05-12T16:38:38.068Z: Transaction confirmed!
+2024-05-12T16:38:38.069Z: ====== FundGas end ======
+2024-05-12T16:38:38.069Z: ====== FundGas start ======
+2024-05-12T16:38:38.069Z: ModeContract: EQD3NfOLyLzHwKZ37henJc-PIoA27L3PnXJjn9caB-_9RmtO
+2024-05-12T16:38:44.996Z: AxiosError: timeout of 5000ms exceeded
+2024-05-12T16:38:45.002Z: Network Err, Retrying...
+2024-05-12T16:39:11.624Z: Waiting for transaction to confirm...
+2024-05-12T16:39:29.463Z: Transaction confirmed!
+2024-05-12T16:39:29.463Z: ====== FundGas end ======
+2024-05-12T16:39:37.026Z: Deploying using ./deploy/mode2.json. Executing step 4.
+2024-05-12T16:39:37.028Z: modeATestContract: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s
+2024-05-12T16:39:37.028Z: modeBTestContract: EQD3NfOLyLzHwKZ37henJc-PIoA27L3PnXJjn9caB-_9RmtO
+2024-05-12T16:39:41.280Z: ====== SetModeAddr start ======
+2024-05-12T16:39:41.280Z: ModeContract: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s
+2024-05-12T16:40:00.676Z: Waiting for transaction to confirm...
+2024-05-12T16:40:28.148Z: Transaction confirmed!
+2024-05-12T16:40:28.149Z: ====== SetModeAddr end ======
+2024-05-12T16:40:28.149Z: ====== SetModeAddr start ======
+2024-05-12T16:40:28.149Z: ModeContract: EQD3NfOLyLzHwKZ37henJc-PIoA27L3PnXJjn9caB-_9RmtO
+2024-05-12T16:40:52.846Z: Waiting for transaction to confirm...
+2024-05-12T16:41:09.864Z: Transaction confirmed!
+2024-05-12T16:41:09.864Z: ====== SetModeAddr end ======
+2024-05-12T16:41:24.326Z: Deploying using ./deploy/mode2.json. Executing step 5.
+2024-05-12T16:41:24.327Z: modeATestContract: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s
+2024-05-12T16:41:24.328Z: modeBTestContract: EQD3NfOLyLzHwKZ37henJc-PIoA27L3PnXJjn9caB-_9RmtO
+2024-05-12T16:41:28.578Z: ====== MyBalance start ======
+2024-05-12T16:41:31.486Z: ModeA: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s -> 1994532683
+2024-05-12T16:41:31.486Z: ====== MyBalance end ======
+2024-05-12T16:41:31.486Z: ====== MyBalance start ======
+2024-05-12T16:41:35.339Z: ModeB: EQD3NfOLyLzHwKZ37henJc-PIoA27L3PnXJjn9caB-_9RmtO -> 1994577900
+2024-05-12T16:41:35.339Z: ====== MyBalance end ======
+2024-05-12T16:42:01.303Z: Deploying using ./deploy/mode2.json. Executing step 6.
+2024-05-12T16:42:01.305Z: modeATestContract: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s
+2024-05-12T16:42:01.305Z: modeBTestContract: EQD3NfOLyLzHwKZ37henJc-PIoA27L3PnXJjn9caB-_9RmtO
+2024-05-12T16:42:03.480Z: ====== ModeASendRemainingValueAndSendIgnoreErrors start ======
+2024-05-12T16:42:03.481Z: ModeContract: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s
+2024-05-12T16:42:20.509Z: Waiting for transaction to confirm...
+2024-05-12T16:42:38.319Z: Transaction confirmed!
+2024-05-12T16:42:38.319Z: ====== ModeASendRemainingValueAndSendIgnoreErrors end ======
+2024-05-12T16:42:38.320Z: ====== Mark start ======
+2024-05-12T16:42:40.998Z: modeA: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s -> Mark: 0
+2024-05-12T16:42:40.998Z: ====== Mark end ======
+2024-05-12T16:46:02.742Z: Deploying using ./deploy/mode2.json. Executing step 6.
+2024-05-12T16:46:02.745Z: modeATestContract: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s
+2024-05-12T16:46:02.746Z: modeBTestContract: EQD3NfOLyLzHwKZ37henJc-PIoA27L3PnXJjn9caB-_9RmtO
+2024-05-12T16:46:04.923Z: ====== Mark start ======
+2024-05-12T16:46:06.989Z: modeA: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s -> Mark: 30000
+2024-05-12T16:46:06.991Z: ====== Mark end ======
+2024-05-12T16:51:41.652Z: Deploying using ./deploy/mode2.json. Executing step 5.
+2024-05-12T16:51:41.654Z: modeATestContract: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s
+2024-05-12T16:51:41.654Z: modeBTestContract: EQD3NfOLyLzHwKZ37henJc-PIoA27L3PnXJjn9caB-_9RmtO
+2024-05-12T16:51:45.907Z: ====== MyBalance start ======
+2024-05-12T16:51:51.237Z: ModeA: EQChXCy4hK_zeJG3Cr_bLdEjBcEFGmhPPlpIlGrBEQMCxh7s -> 11706170081
+2024-05-12T16:51:51.237Z: ====== MyBalance end ======
+2024-05-12T16:51:51.237Z: ====== MyBalance start ======
+2024-05-12T16:51:54.109Z: ModeB: EQD3NfOLyLzHwKZ37henJc-PIoA27L3PnXJjn9caB-_9RmtO -> 1994577800
+2024-05-12T16:51:54.109Z: ====== MyBalance end ======

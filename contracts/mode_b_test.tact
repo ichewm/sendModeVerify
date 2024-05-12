@@ -11,10 +11,12 @@ contract ModeBTest with OwnableTransferable, Deployable {
 
     mode_a: Address;
     owner: Address;
+    seed: Int;
     mark: Int = 0;
 
-    init(owner: Address) {
+    init(owner: Address, seed: Int) {
         self.owner = owner;
+        self.seed = seed;
         self.mode_a = newAddress(0, 0);
     }
 
@@ -34,11 +36,7 @@ contract ModeBTest with OwnableTransferable, Deployable {
 
         let extra_data: Builder = beginCell();
         extra_data = extra_data.storeAddress(myAddress());
-        extra_data = extra_data.storeAddress(myAddress());
-        extra_data = extra_data.storeUint(now(), 32);
         extra_data = extra_data.storeUint(self.my_balance() ,64);
-        extra_data = extra_data.storeCoins(self.STORAGE_GAS_RESERVE);
-        extra_data = extra_data.storeCoins(self.GAS_MESSAGE_FEE);
 
         send(SendParameters{
                 to: self.mode_a,

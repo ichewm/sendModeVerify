@@ -23,6 +23,8 @@ let adminWalletContract0: OpenedContract<WalletContractV4>;
 let client: TonClient4;
 let adminWalletSender0: Sender;
 
+let seed: bigint = BigInt(1);
+
 // Contract address
 let modeATestContract: Address;
 let modeBTestContract: Address;
@@ -153,7 +155,7 @@ async function deployModeATestContract() {
         seqno = await adminWalletContract0.getSeqno();
     });
 
-    const modeATest = client.open(await ModeATest.fromInit(adminWalletContract0.address));
+    const modeATest = client.open(await ModeATest.fromInit(adminWalletContract0.address, seed));
 
     await todo(async () => {
         await modeATest.send(
@@ -195,7 +197,7 @@ async function deployModeBTestContract() {
         seqno = await adminWalletContract0.getSeqno();
     });
 
-    const modeBTest = client.open(await ModeBTest.fromInit(adminWalletContract0.address));
+    const modeBTest = client.open(await ModeBTest.fromInit(adminWalletContract0.address, seed));
 
     await todo(async () => {
         await modeBTest.send(
@@ -394,7 +396,7 @@ async function main() {
             break;
         case 6:
             modeA = await ConstructModeATestContract();
-            await ModeASendRemainingValueAndSendIgnoreErrors(modeA, toNano(10), BigInt(30000));
+            // await ModeASendRemainingValueAndSendIgnoreErrors(modeA, toNano(10), BigInt(30000));
             await ModeMark("modeA", modeA);
             break;
         default:
