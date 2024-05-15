@@ -1,0 +1,14 @@
+2024-05-15T10:30:26.529Z: Deploying using ./deploy/mode3.json. Executing step 1.
+2024-05-15T10:30:26.629Z: ====== Deploying ModeATest Contract ======
+2024-05-15T10:30:42.924Z: Waiting for transaction to confirm...
+2024-05-15T10:31:03.035Z: Transaction confirmed!
+2024-05-15T10:31:05.116Z: modeATest contract: EQA18Us-5Bty4i0sCGGmJtIkiJxTiwBFTcsaL1j1ii40wfIB
+2024-05-15T10:31:05.118Z: ====== Deploying ModeATest Deployed ======
+2024-05-15T10:31:05.119Z: File written successfully:
+2024-05-15T10:32:39.690Z: Deploying using ./deploy/mode3.json. Executing step 3.
+2024-05-15T10:32:39.691Z: modeATestContract: EQA18Us-5Bty4i0sCGGmJtIkiJxTiwBFTcsaL1j1ii40wfIB
+2024-05-15T10:32:41.886Z: ====== FundGas start ======
+2024-05-15T10:32:41.887Z: ModeContract: EQA18Us-5Bty4i0sCGGmJtIkiJxTiwBFTcsaL1j1ii40wfIB
+2024-05-15T10:32:56.958Z: Waiting for transaction to confirm...
+2024-05-15T10:33:09.121Z: Transaction confirmed!
+2024-05-15T10:33:09.123Z: ====== FundGas end ======

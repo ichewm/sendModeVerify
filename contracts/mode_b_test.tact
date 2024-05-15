@@ -57,7 +57,7 @@ contract ModeBTest with OwnableTransferable, Deployable {
         dust_to_claim = myBalance() - self.STORAGE_GAS_RESERVE + self.GAS_MESSAGE_FEE;
         send(SendParameters{
                 to: self.owner(),
-                value: 0,
+                value: dust_to_claim,
                 mode: SendRemainingValue | SendIgnoreErrors,
                 body: "withdraw dust".asComment()
             }

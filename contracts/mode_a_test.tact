@@ -66,11 +66,21 @@ contract ModeATest with OwnableTransferable, Deployable {
         dust_to_claim = myBalance() - self.STORAGE_GAS_RESERVE + self.GAS_MESSAGE_FEE;
         send(SendParameters{
                 to: self.owner(),
-                value: 0,
+                value: dust_to_claim,
                 mode: SendRemainingValue | SendIgnoreErrors,
                 body: "withdraw dust".asComment()
             }
         );
+    }
+
+    receive("ToTon") {
+        send(SendParameters{
+            value: ton("1"),
+            to: self.owner,
+            bounce: false,
+            mode: SendIgnoreErrors,
+            body: "Go Go".asComment()
+        });
     }
 
     get fun my_balance(): Int {

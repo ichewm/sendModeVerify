@@ -378,9 +378,9 @@ async function main() {
         case 3:
             // [Owner]
             modeA = await ConstructModeATestContract();
-            modeB = await ConstructModeBTestContract();
+            // modeB = await ConstructModeBTestContract();
             await ModeFundGas(modeA, toNano(1));
-            await ModeFundGas(modeB, toNano(1));
+            // await ModeFundGas(modeB, toNano(1));
             break;
         case 4:
             modeA = await ConstructModeATestContract();
