@@ -50,6 +50,29 @@ contract ModeBTest with OwnableTransferable, Deployable {
         );
     }
 
+    receive(msg: SendPayGasSeparatelyMessage){
+        // 指定 value
+        require(sender() == self.mode_a, "Unauthenticated sender");
+        repeat(msg.number_of_calculations) {
+            self.mark = self.mark + 1;
+        }
+
+        let extra_data: Builder = beginCell();
+        extra_data = extra_data.storeAddress(myAddress());
+        extra_data = extra_data.storeUint(self.my_balance() ,64);
+
+        send(SendParameters{
+                to: self.mode_a,
+                value: ton("1"),
+                mode: SendPayGasSeparately,
+                body: MarkMessage{ 
+                    mark: self.mark,
+                    extra_data: beginCell().storeRef(extra_data.endCell()).asSlice()
+                }.toCell()
+            }
+        );
+    }
+
     receive("withdraw dust") {
         self.requireOwner();
 

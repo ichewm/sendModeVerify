@@ -1,7 +1,7 @@
 import { getHttpEndpoint, Network } from '@orbs-network/ton-access';
 import { mnemonicToWalletKey } from '@ton/crypto';
 import { TonClient4, WalletContractV4 } from '@ton/ton';
-import { toNano, Address, Sender, OpenedContract, beginCell, Cell } from '@ton/core';
+import { toNano, Address, Sender, OpenedContract, beginCell, Cell, fromNano } from '@ton/core';
 
 import { ModeATest, SendRemainingValueAndSendIgnoreErrors, SetModeAddr } from '../wrappers/ModeATest';
 import { ModeBTest } from '../wrappers/ModeBTest';
@@ -298,6 +298,29 @@ async function ModeASendRemainingValueAndSendIgnoreErrors(contract: OpenedContra
     console.log('====== ModeASendRemainingValueAndSendIgnoreErrors end ======');
 }
 
+async function ModeASendPayGasSeparatelyMessage(contract: OpenedContract<ModeATest>, value: bigint, number_of_calculations: bigint) {
+    console.log('====== ModeASendPayGasSeparatelyMessage start ======');
+    console.log(`ModeContract: ${contract.address}`);
+    let seqno = await getSeqno(adminWalletContract0);
+
+    await todo(async () => {
+        await contract.send(
+            adminWalletSender0,
+            {
+                value: value,
+            },
+            {
+                $$type: "SendPayGasSeparatelyMessage",
+                number_of_calculations: number_of_calculations
+            },
+        )
+    });
+
+    await wait(seqno, adminWalletContract0);
+    console.log('Transaction confirmed!');
+    console.log('====== ModeASendPayGasSeparatelyMessage end ======');
+}
+
 async function ModeMyBalance(name: string, contract: OpenedContract<ModeATest> | OpenedContract<ModeBTest>) {
     console.log('====== MyBalance start ======');
     let balance = await contract.getMyBalance();
@@ -390,15 +413,27 @@ async function main() {
             break;
         case 5:
             modeA = await ConstructModeATestContract();
-            modeB = await ConstructModeBTestContract();
+            // modeB = await ConstructModeBTestContract();
             await ModeMyBalance("ModeA", modeA);
-            await ModeMyBalance("ModeB", modeB);
+            // await ModeMyBalance("ModeB", modeB);
             break;
         case 6:
             modeA = await ConstructModeATestContract();
-            // await ModeASendRemainingValueAndSendIgnoreErrors(modeA, toNano(10), BigInt(30000));
+            await ModeASendRemainingValueAndSendIgnoreErrors(modeA, toNano(10), BigInt(30000));
             await ModeMark("modeA", modeA);
             break;
+        case 7:
+            modeA = await ConstructModeATestContract();
+            // await ModeASendPayGasSeparatelyMessage(modeA, toNano(10), BigInt(20000));
+            await ModeMark("modeA", modeA);
+            break;
+        case 999:
+            console.log(`ModeA: EQDcg28XwX092SpHdDcDCwxAoDuotpZwtcRGiMNU1xqtwlyg -> ${fromNano(1994283861)}`);
+            console.log(`ModeB: EQBCm9UdpYmGCpblMTYyHiTu0jTYZxi7t2WMta51lFgPkSEe -> ${fromNano(1994532692)}`);
+            console.log(`ModeA: EQDcg28XwX092SpHdDcDCwxAoDuotpZwtcRGiMNU1xqtwlyg -> ${fromNano(11987111203)}`);
+            console.log(`ModeB: EQBCm9UdpYmGCpblMTYyHiTu0jTYZxi7t2WMta51lFgPkSEe -> ${fromNano(1805090953)}`);
+            console.log(`ModeA: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC -> ${fromNano(1993930325)}`);
+            console.log(`ModeA: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC -> ${fromNano(1089211797)}`);
         default:
             console.log('Invalid step. Please use argument --step N.');
     }
@@ -406,4 +441,4 @@ async function main() {
 
 main();
 
-// npx ts-node ./deploy/deployPixelSwap.ts --conf ./deploy/configPixelswap1.json --step 1
+// npx ts-node ./deploy/deployModeTest.ts --conf ./deploy/mode4.json --step 1

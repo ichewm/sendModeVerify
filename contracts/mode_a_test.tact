@@ -1,9 +1,8 @@
 import "@stdlib/deploy";
 import "@stdlib/ownable";
 import "./generic_message.tact";
-message SetModeB {
-    addr: Address;
-}
+import "./msgtools.tact";
+
 
 // A Test 是用来发送请求的 用户发送各类 Mode 请求
 
@@ -37,6 +36,8 @@ contract ModeATest with OwnableTransferable, Deployable {
 
     receive("fund gas"){}
 
+    receive(msg: MSGTOOLS__JettonExcesses) {}
+
     receive(msg: SetModeAddr){
         self.requireOwner();
         self.mode_b = msg.addr;
@@ -54,9 +55,32 @@ contract ModeATest with OwnableTransferable, Deployable {
         );
     }
 
+    receive(msg: SendPayGasSeparatelyMessage){
+        // 指定 value
+        self.requireOwner();
+        send(SendParameters{
+                to: self.mode_b,
+                value:  ton("1"),
+                mode: SendPayGasSeparately,
+                body: msg.toCell()
+            }
+        );
+    }
+
     receive(msg: MarkMessage) {
         require(sender() == self.mode_b, "Unauthenticated sender");
         self.mark = msg.mark;
+    }
+
+    receive(msg: Count) {
+        // 测试在执行不同循环后 给用户退还 gas 和 jetton 是否 会导致合约内资金减少
+        self.requireOwner();
+        repeat(msg.count) {
+            // 有写入操作 防止出现 不写入可能不消耗 gas 问题
+            self.mark = self.mark + 1;
+        }
+        let val: Int = context().value - ton("0.1");
+        sender().transfer_with_text(msg.sender, msg.amount, val, ton("0.1"), 0, "Transfer");
     }
 
     receive("withdraw dust") {
@@ -73,6 +97,16 @@ contract ModeATest with OwnableTransferable, Deployable {
         );
     }
 
+    receive("ToTonSendPayGasSeparately") {
+        send(SendParameters{
+            value: ton("1"),
+            to: self.owner,
+            bounce: false,
+            mode: SendPayGasSeparately,
+            body: "Go Go".asComment()
+        });
+    }
+
     receive("ToTon") {
         send(SendParameters{
             value: ton("1"),
@@ -82,6 +116,7 @@ contract ModeATest with OwnableTransferable, Deployable {
             body: "Go Go".asComment()
         });
     }
+
 
     get fun my_balance(): Int {
         return myBalance();

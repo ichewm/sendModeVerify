@@ -1,0 +1,48 @@
+2024-05-21T01:35:23.561Z: Deploying using ./deploy/mode5.json. Executing step 1.
+2024-05-21T01:35:23.671Z: ====== Deploying ModeATest Contract ======
+2024-05-21T01:35:38.784Z: Waiting for transaction to confirm...
+2024-05-21T01:35:57.783Z: Transaction confirmed!
+2024-05-21T01:35:59.874Z: modeATest contract: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC
+2024-05-21T01:35:59.875Z: ====== Deploying ModeATest Deployed ======
+2024-05-21T01:35:59.876Z: File written successfully:
+2024-05-21T01:36:31.230Z: Deploying using ./deploy/mode5.json. Executing step 3.
+2024-05-21T01:36:31.233Z: modeATestContract: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC
+2024-05-21T01:36:33.429Z: ====== FundGas start ======
+2024-05-21T01:36:33.430Z: ModeContract: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC
+2024-05-21T01:36:47.814Z: Waiting for transaction to confirm...
+2024-05-21T01:36:59.241Z: Transaction confirmed!
+2024-05-21T01:36:59.242Z: ====== FundGas end ======
+2024-05-21T01:37:09.344Z: Deploying using ./deploy/mode5.json. Executing step 5.
+2024-05-21T01:37:09.346Z: modeATestContract: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC
+2024-05-21T01:37:11.522Z: ====== MyBalance start ======
+2024-05-21T01:37:13.979Z: ModeA: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC -> 996965200
+2024-05-21T01:37:13.979Z: ====== MyBalance end ======
+2024-05-21T01:37:23.525Z: Deploying using ./deploy/mode5.json. Executing step 3.
+2024-05-21T01:37:23.527Z: modeATestContract: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC
+2024-05-21T01:37:25.713Z: ====== FundGas start ======
+2024-05-21T01:37:25.713Z: ModeContract: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC
+2024-05-21T01:37:39.550Z: Waiting for transaction to confirm...
+2024-05-21T01:37:53.401Z: AxiosError: timeout of 5000ms exceeded
+2024-05-21T01:37:53.405Z: Network Err, Retrying...
+2024-05-21T01:37:55.510Z: Waiting for transaction to confirm...
+2024-05-21T01:38:03.140Z: Transaction confirmed!
+2024-05-21T01:38:03.141Z: ====== FundGas end ======
+2024-05-21T01:38:56.825Z: Deploying using ./deploy/mode5.json. Executing step 5.
+2024-05-21T01:38:56.827Z: modeATestContract: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC
+2024-05-21T01:38:59.004Z: ====== MyBalance start ======
+2024-05-21T01:39:00.695Z: ModeA: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC -> 1993930325
+2024-05-21T01:39:00.695Z: ====== MyBalance end ======
+2024-05-21T01:41:32.693Z: Deploying using ./deploy/mode5.json. Executing step 5.
+2024-05-21T01:41:32.695Z: modeATestContract: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC
+2024-05-21T01:41:34.892Z: ====== MyBalance start ======
+2024-05-21T01:41:36.627Z: ModeA: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC -> 1089211797
+2024-05-21T01:41:36.627Z: ====== MyBalance end ======
+2024-05-21T01:42:31.608Z: Deploying using ./deploy/mode5.json. Executing step 999.
+2024-05-21T01:42:31.610Z: modeATestContract: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC
+2024-05-21T01:42:31.704Z: ModeA: EQDcg28XwX092SpHdDcDCwxAoDuotpZwtcRGiMNU1xqtwlyg -> 1.994283861
+2024-05-21T01:42:31.704Z: ModeB: EQBCm9UdpYmGCpblMTYyHiTu0jTYZxi7t2WMta51lFgPkSEe -> 1.994532692
+2024-05-21T01:42:31.704Z: ModeA: EQDcg28XwX092SpHdDcDCwxAoDuotpZwtcRGiMNU1xqtwlyg -> 11.987111203
+2024-05-21T01:42:31.704Z: ModeB: EQBCm9UdpYmGCpblMTYyHiTu0jTYZxi7t2WMta51lFgPkSEe -> 1.805090953
+2024-05-21T01:42:31.705Z: ModeA: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC -> 1.993930325
+2024-05-21T01:42:31.705Z: ModeA: EQCQ1qBADDEmLMYjF-KhL6Yqb7D7jVXyHagpquuP_rz581GC -> 1.089211797
+2024-05-21T01:42:31.705Z: Invalid step. Please use argument --step N.
